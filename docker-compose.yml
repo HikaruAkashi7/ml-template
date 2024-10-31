@@ -1,0 +1,17 @@
+version: '3'
+services:
+  script:
+    build:
+      context: .
+      dockerfile: Dockerfile.script
+    volumes:
+      - .:/app
+
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile.jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
